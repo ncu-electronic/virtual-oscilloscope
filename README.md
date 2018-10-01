@@ -11,9 +11,9 @@ Written in python3 and PyQt5.
 
 **Install with pip:**
 
-`pip3 install PyQt5`, `pip3 install pyqtgraph`
+`pip3 install PyQt5, pyqtgraph`
 
-**In addition**, on linux users should install ***qt5-serialport*** package for the obtain the qtserial.so shared library, this name is based on pacman package manager, it may be different on other linux distributions.
+**In addition**, on linux users should install ***qt5-serialport*** package to obtain the qtserial.so shared library, this name is specific for the "pacman" package manager on arch linux, it may be different on other linux distributions.
 
 ### 2. Run it:
 `python3 main.py`
