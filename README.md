@@ -1,5 +1,5 @@
 # GeneralInstrumentGUI
-A general instrument GUI aiming for hardware manipulation.
+A general instrument GUI aiming for MCU manipulation and data visualization.
 
 Written in python3 and PyQt5.
 
@@ -62,7 +62,7 @@ void loop() {
 
 ## Documention:
 
-There's some marks during developing:[*2018-01-04-marks-during-developing-oscilliscope-gui*](https://github.com/GeneralInstrumentGUI/General-Instrument-GUI/blob/master/doc/2018-01-04-marks-during-developing-oscilliscope-gui.md)
+There's some docs: [*2018-01-04-marks-during-developing-oscilliscope-gui*](https://github.com/ncu-electronic/general_instrument_gui/tree/master/doc)
 
 ## Screenshots
 ![alt_text](https://github.com/ncu-electronic/general_instrument_gui/raw/master/screenshots/2018-10-02-065207_1920x1080_scrot.png)
