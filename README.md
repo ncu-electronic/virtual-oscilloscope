@@ -62,7 +62,7 @@ void loop() {
 
 ## Documention:
 
-There's some docs: [*2018-01-04-marks-during-developing-oscilliscope-gui*](https://github.com/ncu-electronic/general_instrument_gui/tree/master/doc)
+There's some docs: [*https://github.com/ncu-electronic/general_instrument_gui/tree/master/doc*](https://github.com/ncu-electronic/general_instrument_gui/tree/master/doc)
 
 ## Screenshots
 ![alt_text](https://github.com/ncu-electronic/general_instrument_gui/raw/master/screenshots/2018-10-02-065207_1920x1080_scrot.png)
