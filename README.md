@@ -1,6 +1,5 @@
-# GeneralInstrumentGUI
-A general instrument GUI aiming for MCU manipulation and data visualization.
-
+# Virtual-Oscilloscope-NCU
+A virtual oscilloscope that supports multiple data source protocols.
 Written in python3 and PyQt5.
 
 ## How to use:
@@ -21,7 +20,7 @@ Written in python3 and PyQt5.
 ## Current data procotol:
 Currently, data is transfering through serial port.
 
-And at present I use one 8bit to represent a certain data number, so it'll be restrained in 0~255, there is temporarly no other thing.
+And at present we'll use one 8 bit to represent a certain data number, so it'll be restrained in 0~255, there is temporarly no other thing.
 
 **Demonstration:**
 
@@ -61,8 +60,7 @@ void loop() {
 ```
 
 ## Documention:
-
-There's some docs: [*https://github.com/ncu-electronic/general_instrument_gui/tree/master/doc*](https://github.com/ncu-electronic/general_instrument_gui/tree/master/doc)
+https://ncu-electronic.github.io/virtual-oscilloscope/
 
 ## Screenshots
 ![alt_text](https://github.com/ncu-electronic/general_instrument_gui/raw/master/screenshots/2018-10-02-065207_1920x1080_scrot.png)
