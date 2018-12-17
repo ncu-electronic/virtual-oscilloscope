@@ -1,4 +1,4 @@
-baseURL = "https://github.com/ncu-electronic/virtual-oscilloscope"
+baseURL = "https://ncu-electronic.github.io/virtual-oscilloscope"
 title = "Virtual-Oscilloscope-NCU-Electronic"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
