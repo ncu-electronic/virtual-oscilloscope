@@ -135,3 +135,6 @@ hrefTargetBlank = true
 lang = "en"
 languageName = "English"
 weight = 1
+
+# Github docs
+publishDir = "docs"
