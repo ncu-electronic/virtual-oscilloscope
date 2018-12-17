@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='1.Qt5-serial package On linux user should install the qt5-serial package for the implementation of QtSerialPort.so file.(In my case &mdash; Arch Linux.)
+2.Lamba I have used lamba for pass arguments to the functions that connnected with UI elements&rsquo; change.
+3.Can&rsquo;t read vaild data for serial port? While using QtSerialPort.QSerialPort, without implement QSerialPort.waitReadyRead(int milliseconds) will cause always read empty data from serial port, and the QSerialPort.readyRead signal cannot be emitted.(Only tested in python interactive terminal,and so there is no event loop because of I didn&rsquo;t create a QApplication)'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Marks during developing oscilliscope GUI • Virtual-Oscilloscope-NCU-Electronic'>
+<meta property='og:description' content='1.Qt5-serial package On linux user should install the qt5-serial package for the implementation of QtSerialPort.so file.(In my case &mdash; Arch Linux.)
+2.Lamba I have used lamba for pass arguments to the functions that connnected with UI elements&rsquo; change.
+3.Can&rsquo;t read vaild data for serial port? While using QtSerialPort.QSerialPort, without implement QSerialPort.waitReadyRead(int milliseconds) will cause always read empty data from serial port, and the QSerialPort.readyRead signal cannot be emitted.(Only tested in python interactive terminal,and so there is no event loop because of I didn&rsquo;t create a QApplication)'>
+<meta property='og:url' content='https://github.com/ncu-electronic/virtual-oscilloscope/posts/marks-during-dev/'>
+<meta property='og:site_name' content='Virtual-Oscilloscope-NCU-Electronic'>
+<meta property='og:type' content='article'><meta property='article:section' content='posts'><meta property='article:published_time' content='2018-12-17T20:24:00&#43;08:00'/><meta property='article:modified_time' content='2018-12-17T20:24:00&#43;08:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.52" />
+
+  <title>Marks during developing oscilliscope GUI • Virtual-Oscilloscope-NCU-Electronic</title>
+  <link rel='canonical' href='https://github.com/ncu-electronic/virtual-oscilloscope/posts/marks-during-dev/'>
+  
+  
+  <link rel='icon' href='/ncu-electronic/virtual-oscilloscope/favicon.ico'>
+<link rel='stylesheet' href='/ncu-electronic/virtual-oscilloscope/assets/css/main.4a10984a.css'><link rel='stylesheet' href='/ncu-electronic/virtual-oscilloscope/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-posts layout-post has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/ncu-electronic/virtual-oscilloscope/'>
+        <img src='/ncu-electronic/virtual-oscilloscope/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+    Virtual-Oscilloscope-NCU-Electronic
+    </h2>
+    <div class='desc'>
+    A virtual oscilloscope that supports multiple data source protocols.
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/ncu-electronic/virtual-oscilloscope/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><span>Not a single Tag!</span></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='https://github.com/ncu-electronic/virtual-oscilloscope'>Repo</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/ncu-electronic/virtual-oscilloscope/'>Virtual-Oscilloscope-NCU-Electronic</a></li><li><a href='/ncu-electronic/virtual-oscilloscope/posts/'>Posts</a></li><li><span>Marks during developing oscilliscope GUI</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Virtual-Oscilloscope-NCU-Electronic</p><p class='desc site-desc'>A virtual oscilloscope that supports multiple data source protocols.</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Marks during developing oscilliscope GUI</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2018-12-17T20:24:00&#43;08:00'>2018, Dec 17</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+3 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  
+
+<h3 id="1-qt5-serial-package">1.Qt5-serial package</h3>
+
+<p>On linux user should install the qt5-serial package for the implementation of QtSerialPort.so file.(In my case &mdash; Arch Linux.)</p>
+
+<h3 id="2-lamba">2.Lamba</h3>
+
+<p>I have used <strong><em>lamba</em></strong> for pass arguments to the functions that connnected with UI elements&rsquo; change.</p>
+
+<h3 id="3-can-t-read-vaild-data-for-serial-port">3.Can&rsquo;t read vaild data for serial port?</h3>
+
+<p>While using <code>QtSerialPort.QSerialPort</code>, without implement <code>QSerialPort.waitReadyRead(int milliseconds)</code> will cause always read empty data from serial port, and the <code>QSerialPort.readyRead</code> signal cannot be emitted.(<em>Only tested in python interactive terminal,and so there is no event loop because of I didn&rsquo;t create a QApplication</em>)</p>
+
+<p>And after test in a real QApplication with GUI, I found that doesn&rsquo;t like in the interactive terminal model, the <code>QSerialPort.readyRead</code> can be emitted.</p>
+
+<p>Sum them up, the difference between QtSerial communication in python interactive terminal and in a real QApplication is whether you need to mannully call the <code>QSerialPort.waitReadyRead()</code> function.In python interactive terminal you need I thought that&rsquo;s probably because there is no event loop without a QApplication.</p>
+
+<h3 id="4-big-bang">4.Big Bang!!!</h3>
+
+<p>What I found is that unlike C or C++ programming language,arguments pass to a python function are the uniqued ones.</p>
+
+<p>What I mean is when you pass a variable or something which does have a pointer in C/C++ to function in C/C++ code, then the function will allocates new space to store the argument variable, and it only passes in the original variable&rsquo;s value, so if you do some change to this variable inside function,the original one won&rsquo;t be changed,because they have different pointer.</p>
+
+<p><del>But in python codes, it&rsquo;s completely different.When you pass a variable or instance to a function, if the code in function changes the passed in variable,then the original one(in fact the same one, I tested and found their &ldquo;id&rdquo; is the same) will also changed.</del><a href="https://stackoverflow.com/questions/22558739/without-pointers-can-i-pass-references-as-arguments-in-python" target="_blank">Reference source</a></p>
+
+<p>And I copied a paragraph from <a href="https://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference" target="_blank">here</a>:
+&gt; Arguments are <strong>passed by assignment</strong>. The rationale behind this is twofold:</p>
+
+<blockquote>
+<p>1.the parameter passed in is actually a reference to an object (but the reference is passed by value)
+2.some data types are mutable, but others aren&rsquo;t.</p>
+
+<p>So: If you pass a mutable object into a method, the method gets a reference to that same object and you can mutate it to your heart&rsquo;s delight, but if you rebind the reference in the method, the outer scope will know nothing about it, and after you&rsquo;re done, the outer reference will still point at the original object.If you pass an immutable object to a method, you still can&rsquo;t rebind the outer reference, and you can&rsquo;t even mutate the object.To make it even more clear, let&rsquo;s have some examples.</p>
+</blockquote>
+
+<p>I found the different between C language&rsquo;s &ldquo;=&rdquo; and python&rsquo;s &ldquo;=&rdquo;.There are some codes in python:
+{% highlight python %}
+class TestIdClass():
+    def <strong>init</strong>(self, item):
+        print(&lsquo;This is one passed in.\n&rsquo; + str(id(item)))
+        self.item = item
+        print(&ldquo;This is this instance&rsquo;s attribute\n&rdquo; + str(id(self.item)))</p>
+
+<p>x = 13</p>
+
+<p>print(&lsquo;This is the original one\n&rsquo; + str(id(x)))
+test_id_class = TestIdClass(x)
+{% endhighlight %}
+And it output is this:</p>
+
+<pre><code>This is the original one
+139678317521440
+This is one passed in.
+139678317521440
+This is this instance's attribute
+139678317521440
+</code></pre>
+
+<p>Their ids are the same, it means they are actually the same one.</p>
+
+<p>So, the &ldquo;=&rdquo; operator in python lets the variable or instance in left side references to the right one(In my opinion), so they are actually the same,and have same ids.</p>
+
+<p>But in C/C++, operator &ldquo;=&rdquo; does transfer the value from right side to left side, and so they are no the same(In my opinion).</p>
+
+<h3 id="5-qtimer">5.QTimer</h3>
+
+<p>I discovered that the QTimer can&rsquo;t be used or declared inside a function as a local variable, if I do so, timer will not be validated. It probably needs to be a global variable.</p>
+
+<h3 id="6-encountering-intractable-problems">6.Encountering intractable problems</h3>
+
+<ul>
+<li>2018-01-06</li>
+</ul>
+
+<h3 id="7-we-ve-backed-for-development">7.We&rsquo;ve backed for development!</h3>
+
+<ul>
+<li>2018-12-17</li>
+</ul>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'>
+  </div>
+</footer>
+
+
+</article>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/ncu-electronic' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:okcy1016@gmail.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2018 NCU-ELECTRONIC </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__public_path__='\/ncu-electronic\/virtual-oscilloscope\/assets\/js\/'</script>
+
+<script src='/ncu-electronic/virtual-oscilloscope/assets/js/main.fae8ed32.js'></script><script src='/ncu-electronic/virtual-oscilloscope/js/custom.js'></script>
+
+</body>
+
+</html>
+
