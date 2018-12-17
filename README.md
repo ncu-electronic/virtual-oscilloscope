@@ -4,9 +4,8 @@ Written in python3 and PyQt5.
 
 ## How to use:
 ### 1. Install dependencies:
-[*pyqtgraph*](http://www.pyqtgraph.org/)
-
-[*PyQt5*](https://pypi.python.org/pypi/PyQt5)
+ - [*pyqtgraph*](http://www.pyqtgraph.org/)
+ - [*PyQt5*](https://pypi.python.org/pypi/PyQt5)
 
 **Install with pip:**
 
