@@ -24,7 +24,7 @@ And at present we'll use one 8 bit to represent a certain data number, so it'll 
 **Demonstration:**
 
 Send square waveform data by arduino, source code:
-```
+```c++
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
